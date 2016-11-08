@@ -23,5 +23,12 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="src/main/resources/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/commons-collections-3.0.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/ezmorph-1.0.2.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/json-lib-1.1-jdk13.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/xom-1.0d10.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
