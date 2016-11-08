@@ -26,7 +26,6 @@ import com.jinjiang.readXml.service.XmlDocument;
 
 public class XmlDocuImpl implements XmlDocument {
 	private Document document;
-	private String fileName;
 
 	@Override
 	public void createXml(String fileName) {
@@ -35,7 +34,7 @@ public class XmlDocuImpl implements XmlDocument {
 		this.document.appendChild(root);
 		Element employee = this.document.createElement("employee");
 		Element name = this.document.createElement("name");
-		name.appendChild(this.document.createTextNode("丁宏亮"));
+		name.appendChild(this.document.createTextNode("丁洪亮"));
 		employee.appendChild(name);
 		Element sex = this.document.createElement("sex");
 		sex.appendChild(this.document.createTextNode("m"));
@@ -43,12 +42,25 @@ public class XmlDocuImpl implements XmlDocument {
 		Element age = this.document.createElement("age");
 		age.appendChild(this.document.createTextNode("30"));
 		employee.appendChild(age);
+		
+		//增加地址信息
+		Element address = this.document.createElement("adress");
+		Element country = this.document.createElement("country");
+		country.appendChild(this.document.createTextNode("China"));
+		address.appendChild(country);
+		Element city = this.document.createElement("city");
+		city.appendChild(this.document.createTextNode("shanghai"));
+		address.appendChild(city);
+		Element street = this.document.createElement("street");
+		street.appendChild(this.document.createTextNode("长乐路400号"));
+		address.appendChild(street);		
+		employee.appendChild(address);
 		root.appendChild(employee);
 		TransformerFactory tf = TransformerFactory.newInstance();
 		try {
 			Transformer transformer = tf.newTransformer();
 			DOMSource source = new DOMSource(document);
-			transformer.setOutputProperty(OutputKeys.ENCODING, "gb2312");
+			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			PrintWriter pw = new PrintWriter(new FileOutputStream(fileName));
 			StreamResult result = new StreamResult(pw);
@@ -105,6 +117,13 @@ public class XmlDocuImpl implements XmlDocument {
 		} catch (ParserConfigurationException e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	public static void main(String[] args) {
+		XmlDocuImpl xmlDoc = new XmlDocuImpl();
+		xmlDoc.init();
+		xmlDoc.createXml("d:\\text.xml");
+		xmlDoc.parserXml("d:\\text.xml");
 	}
 
 }
