@@ -12,7 +12,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		//xml转换成bean  
         try {  
-            File file = new File("d:\\text.xml");  
+            File file = new File("./src/main/resources/lib/text.xml");  
             JAXBContext jaxbContext = JAXBContext.newInstance(Employees.class);  
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
             Employees a = (Employees) jaxbUnmarshaller.unmarshal(file);  

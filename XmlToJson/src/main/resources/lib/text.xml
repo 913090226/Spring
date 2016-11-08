@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<employees>
+<employee>
+<name>丁洪亮</name>
+<sex>m</sex>
+<age>30</age>
+<adress>
+<country>China</country>
+<city>shanghai</city>
+<street>长乐路400号</street>
+</adress>
+</employee>
+</employees>
